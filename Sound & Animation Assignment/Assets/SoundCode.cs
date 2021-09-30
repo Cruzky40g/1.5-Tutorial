@@ -1,88 +1,87 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class SoundCode : MonoBehaviour
 {
     public AudioClip musicClipOne;
 
-public AudioClip musicClipTwo;
+    public AudioClip musicClipTwo;
 
-public AudioSource musicSource;
+    public AudioSource musicSource;
 
-Animator anim;
+    Animator anim;
 
-void Start()
+    void Start()
 
-{
+    {
 
-  anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
 
-}
+    }
 
-// Update is called once per frame
+    // Update is called once per frame
 
-void Update()
+    void Update()
 
-{
+    {
 
-     if (Input.GetKeyDown(KeyCode.W))
-
-        {
-
-          musicSource.clip = musicClipOne;
-
-          musicSource.Play();
-
-          anim.SetInteger("State", 1);
-
-         }
-
-     if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
 
         {
 
-          musicSource.Stop();
+            musicSource.clip = musicClipOne;
 
-          anim.SetInteger("State", 0);
+            musicSource.Play();
 
-         }
+            anim.SetInteger("State", 1);
 
-     if (Input.GetKeyDown(KeyCode.R))
+        }
 
-        {
-
-          musicSource.clip = musicClipTwo;
-
-          musicSource.Play();
-
-          anim.SetInteger("State", 2);
-
-         }
-
-     if (Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.W))
 
         {
 
-          musicSource.Stop();
+            musicSource.Stop();
 
-          anim.SetInteger("State", 0);
+            anim.SetInteger("State", 0);
 
-         }
+        }
 
-     if (Input.GetKeyDown(KeyCode.L))
-
-        {
-
-          musicSource.loop = true;
-
-         }
-
-     if (Input.GetKeyUp(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.R))
 
         {
 
-          musicSource.loop = false;
+            musicSource.clip = musicClipTwo;
+
+            musicSource.Play();
+
+            anim.SetInteger("State", 2);
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.R))
+
+        {
+
+            musicSource.Stop();
+
+            anim.SetInteger("State", 0);
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+
+        {
+
+            musicSource.loop = true;
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.L))
+
+        {
+
+            musicSource.loop = false;
 
         }
 
